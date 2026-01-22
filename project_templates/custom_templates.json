@@ -1,0 +1,530 @@
+{
+  "fullstack_react_fastapi": {
+    "name": "React + FastAPI + Postgres",
+    "description": "Full-stack web app with React frontend, FastAPI backend, and Postgres",
+    "stack": {
+      "frontend": {"framework": "React", "language": "TypeScript"},
+      "backend": {"framework": "FastAPI", "language": "Python"},
+      "database": "PostgreSQL"
+    },
+    "structure": {
+      "frontend/": ["src/", "components/", "pages/", "hooks/", "api/", "styles/"],
+      "backend/": ["app/", "api/", "models/", "schemas/", "services/", "db/"],
+      "infra/": ["docker-compose.yml"]
+    },
+    "dependencies": {
+      "frontend": ["react", "vite", "typescript", "axios", "tailwindcss"],
+      "backend": ["fastapi", "uvicorn", "sqlalchemy", "psycopg2-binary", "pydantic"]
+    }
+  },
+  "fullstack_next_nest": {
+    "name": "Next.js + NestJS + Postgres",
+    "description": "SSR web app with Next.js frontend and NestJS backend",
+    "stack": {
+      "frontend": {"framework": "Next.js", "language": "TypeScript"},
+      "backend": {"framework": "NestJS", "language": "TypeScript"},
+      "database": "PostgreSQL"
+    },
+    "structure": {
+      "frontend/": ["src/app/", "src/components/", "src/lib/", "public/"],
+      "backend/": ["src/", "src/modules/", "src/common/"],
+      "infra/": ["docker-compose.yml"]
+    },
+    "dependencies": {
+      "frontend": ["next", "react", "typescript", "tailwindcss"],
+      "backend": ["@nestjs/core", "@nestjs/common", "@nestjs/typeorm", "typeorm"]
+    }
+  },
+  "fullstack_vue_fastapi": {
+    "name": "Vue + FastAPI + MongoDB",
+    "description": "SPA with Vue frontend, FastAPI backend, and MongoDB",
+    "stack": {
+      "frontend": {"framework": "Vue", "language": "TypeScript"},
+      "backend": {"framework": "FastAPI", "language": "Python"},
+      "database": "MongoDB"
+    },
+    "structure": {
+      "frontend/": ["src/", "components/", "views/", "router/", "store/"],
+      "backend/": ["app/", "api/", "models/", "schemas/", "services/"],
+      "infra/": ["docker-compose.yml"]
+    },
+    "dependencies": {
+      "frontend": ["vue", "vite", "typescript", "pinia", "axios"],
+      "backend": ["fastapi", "uvicorn", "motor", "pydantic"]
+    }
+  },
+  "fullstack_svelte_go": {
+    "name": "SvelteKit + Go Fiber + Postgres",
+    "description": "Modern UI with SvelteKit and Go backend using Fiber",
+    "stack": {
+      "frontend": {"framework": "SvelteKit", "language": "TypeScript"},
+      "backend": {"framework": "Fiber", "language": "Go"},
+      "database": "PostgreSQL"
+    },
+    "structure": {
+      "frontend/": ["src/", "src/routes/", "src/lib/"],
+      "backend/": ["cmd/", "internal/", "pkg/"],
+      "infra/": ["docker-compose.yml"]
+    },
+    "dependencies": {
+      "frontend": ["svelte", "@sveltejs/kit", "typescript"],
+      "backend": ["github.com/gofiber/fiber/v2", "github.com/jackc/pgx/v5"]
+    }
+  },
+  "fullstack_flutter_fastapi": {
+    "name": "Flutter + FastAPI + Postgres",
+    "description": "Mobile app with Flutter frontend and FastAPI backend",
+    "stack": {
+      "frontend": {"framework": "Flutter", "language": "Dart"},
+      "backend": {"framework": "FastAPI", "language": "Python"},
+      "database": "PostgreSQL"
+    },
+    "structure": {
+      "frontend/": ["lib/", "lib/screens/", "lib/services/"],
+      "backend/": ["app/", "api/", "models/", "schemas/", "services/"],
+      "infra/": ["docker-compose.yml"]
+    },
+    "dependencies": {
+      "frontend": ["flutter", "dio", "provider"],
+      "backend": ["fastapi", "uvicorn", "sqlalchemy", "psycopg2-binary"]
+    }
+  },
+  "fullstack_react_node": {
+    "name": "React + Node.js + MongoDB",
+    "description": "Classic MERN-style stack",
+    "stack": {
+      "frontend": {"framework": "React", "language": "TypeScript"},
+      "backend": {"framework": "Express", "language": "TypeScript"},
+      "database": "MongoDB"
+    },
+    "structure": {
+      "frontend/": ["src/", "components/", "pages/", "api/"],
+      "backend/": ["src/", "routes/", "controllers/", "models/", "middleware/"],
+      "infra/": ["docker-compose.yml"]
+    },
+    "dependencies": {
+      "frontend": ["react", "vite", "typescript", "axios"],
+      "backend": ["express", "mongoose", "jsonwebtoken", "bcrypt", "dotenv"]
+    }
+  },
+  "ui_react_admin_dashboard": {
+    "name": "React Admin Dashboard",
+    "description": "Admin dashboard UI with analytics, users, and settings",
+    "stack": {"frontend": {"framework": "React", "language": "TypeScript"}},
+    "theme": "admin_dashboard",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/", "src/pages/", "src/components/", "src/layouts/", "src/hooks/", "src/services/", "src/styles/"]
+    },
+    "pages": ["Dashboard", "Analytics", "Users", "Settings", "Billing"],
+    "components": ["Sidebar", "Topbar", "StatsCard", "ChartPanel", "DataTable", "KpiGrid"],
+    "dependencies": {"frontend": ["react", "vite", "typescript", "react-router-dom", "axios", "tailwindcss"]}
+  },
+  "ui_react_saas_landing": {
+    "name": "React SaaS Landing",
+    "description": "SaaS landing page with pricing and CTA sections",
+    "stack": {"frontend": {"framework": "React", "language": "TypeScript"}},
+    "theme": "saas_landing",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/", "src/pages/", "src/components/", "src/layouts/", "src/styles/"]
+    },
+    "pages": ["Home", "Features", "Pricing", "Testimonials", "FAQ", "Contact"],
+    "components": ["Hero", "FeatureGrid", "PricingCards", "LogoCloud", "CTASection", "Footer"],
+    "dependencies": {"frontend": ["react", "vite", "typescript", "react-router-dom", "axios", "tailwindcss"]}
+  },
+  "ui_react_ecommerce_store": {
+    "name": "React E-commerce Store",
+    "description": "Storefront with catalog, product detail, and checkout",
+    "stack": {"frontend": {"framework": "React", "language": "TypeScript"}},
+    "theme": "ecommerce_store",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/", "src/pages/", "src/components/", "src/layouts/", "src/services/", "src/styles/"]
+    },
+    "pages": ["Home", "Catalog", "ProductDetail", "Cart", "Checkout", "Orders", "Account"],
+    "components": ["ProductCard", "ProductGallery", "Filters", "CartDrawer", "CheckoutForm", "ReviewList"],
+    "dependencies": {"frontend": ["react", "vite", "typescript", "react-router-dom", "axios", "tailwindcss"]}
+  },
+  "ui_react_chat_app": {
+    "name": "React Chat App",
+    "description": "Chat UI with conversations, contacts, and settings",
+    "stack": {"frontend": {"framework": "React", "language": "TypeScript"}},
+    "theme": "chat_app",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/", "src/pages/", "src/components/", "src/layouts/", "src/hooks/", "src/styles/"]
+    },
+    "pages": ["Inbox", "ChatRoom", "Contacts", "Settings"],
+    "components": ["ChatList", "MessageBubble", "Composer", "PresenceBadge", "FilePreview"],
+    "dependencies": {"frontend": ["react", "vite", "typescript", "react-router-dom", "axios", "tailwindcss"]}
+  },
+  "ui_react_blog_cms": {
+    "name": "React Blog CMS",
+    "description": "Blog layout with editor and content management",
+    "stack": {"frontend": {"framework": "React", "language": "TypeScript"}},
+    "theme": "blog_cms",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/", "src/pages/", "src/components/", "src/layouts/", "src/services/", "src/styles/"]
+    },
+    "pages": ["Home", "PostDetail", "Category", "Author", "Admin"],
+    "components": ["PostCard", "TagList", "Editor", "CommentThread", "Sidebar"],
+    "dependencies": {"frontend": ["react", "vite", "typescript", "react-router-dom", "axios", "tailwindcss"]}
+  },
+  "ui_react_portfolio": {
+    "name": "React Portfolio",
+    "description": "Portfolio site with projects and resume",
+    "stack": {"frontend": {"framework": "React", "language": "TypeScript"}},
+    "theme": "portfolio",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/", "src/pages/", "src/components/", "src/layouts/", "src/styles/"]
+    },
+    "pages": ["Home", "Projects", "ProjectDetail", "About", "Contact", "Resume"],
+    "components": ["Hero", "ProjectGrid", "CaseStudy", "Timeline", "ContactForm"],
+    "dependencies": {"frontend": ["react", "vite", "typescript", "react-router-dom", "axios", "tailwindcss"]}
+  },
+  "ui_next_admin_dashboard": {
+    "name": "Next.js Admin Dashboard",
+    "description": "Admin dashboard UI built with Next.js",
+    "stack": {"frontend": {"framework": "Next.js", "language": "TypeScript"}},
+    "theme": "admin_dashboard",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/app/", "src/components/", "src/lib/", "src/styles/", "public/"]
+    },
+    "pages": ["Dashboard", "Analytics", "Users", "Settings", "Billing"],
+    "components": ["Sidebar", "Topbar", "StatsCard", "ChartPanel", "DataTable", "KpiGrid"],
+    "dependencies": {"frontend": ["next", "react", "typescript", "tailwindcss", "axios"]}
+  },
+  "ui_next_saas_landing": {
+    "name": "Next.js SaaS Landing",
+    "description": "SaaS landing page with Next.js and App Router",
+    "stack": {"frontend": {"framework": "Next.js", "language": "TypeScript"}},
+    "theme": "saas_landing",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/app/", "src/components/", "src/lib/", "src/styles/", "public/"]
+    },
+    "pages": ["Home", "Features", "Pricing", "Testimonials", "FAQ", "Contact"],
+    "components": ["Hero", "FeatureGrid", "PricingCards", "LogoCloud", "CTASection", "Footer"],
+    "dependencies": {"frontend": ["next", "react", "typescript", "tailwindcss", "axios"]}
+  },
+  "ui_next_ecommerce_store": {
+    "name": "Next.js E-commerce Store",
+    "description": "Storefront with SSR/ISR and product pages",
+    "stack": {"frontend": {"framework": "Next.js", "language": "TypeScript"}},
+    "theme": "ecommerce_store",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/app/", "src/components/", "src/lib/", "src/styles/", "public/"]
+    },
+    "pages": ["Home", "Catalog", "ProductDetail", "Cart", "Checkout", "Orders", "Account"],
+    "components": ["ProductCard", "ProductGallery", "Filters", "CartDrawer", "CheckoutForm", "ReviewList"],
+    "dependencies": {"frontend": ["next", "react", "typescript", "tailwindcss", "axios"]}
+  },
+  "ui_next_chat_app": {
+    "name": "Next.js Chat App",
+    "description": "Chat UI with conversations and presence",
+    "stack": {"frontend": {"framework": "Next.js", "language": "TypeScript"}},
+    "theme": "chat_app",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/app/", "src/components/", "src/lib/", "src/styles/", "public/"]
+    },
+    "pages": ["Inbox", "ChatRoom", "Contacts", "Settings"],
+    "components": ["ChatList", "MessageBubble", "Composer", "PresenceBadge", "FilePreview"],
+    "dependencies": {"frontend": ["next", "react", "typescript", "tailwindcss", "axios"]}
+  },
+  "ui_next_blog_cms": {
+    "name": "Next.js Blog CMS",
+    "description": "Blog with markdown posts and admin editor",
+    "stack": {"frontend": {"framework": "Next.js", "language": "TypeScript"}},
+    "theme": "blog_cms",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/app/", "src/components/", "src/lib/", "src/styles/", "public/"]
+    },
+    "pages": ["Home", "PostDetail", "Category", "Author", "Admin"],
+    "components": ["PostCard", "TagList", "Editor", "CommentThread", "Sidebar"],
+    "dependencies": {"frontend": ["next", "react", "typescript", "tailwindcss", "axios"]}
+  },
+  "ui_next_portfolio": {
+    "name": "Next.js Portfolio",
+    "description": "Portfolio site with projects and resume",
+    "stack": {"frontend": {"framework": "Next.js", "language": "TypeScript"}},
+    "theme": "portfolio",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/app/", "src/components/", "src/lib/", "src/styles/", "public/"]
+    },
+    "pages": ["Home", "Projects", "ProjectDetail", "About", "Contact", "Resume"],
+    "components": ["Hero", "ProjectGrid", "CaseStudy", "Timeline", "ContactForm"],
+    "dependencies": {"frontend": ["next", "react", "typescript", "tailwindcss", "axios"]}
+  },
+  "ui_vue_admin_dashboard": {
+    "name": "Vue Admin Dashboard",
+    "description": "Admin dashboard UI with Vue",
+    "stack": {"frontend": {"framework": "Vue", "language": "TypeScript"}},
+    "theme": "admin_dashboard",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/", "src/views/", "src/components/", "src/router/", "src/store/", "src/styles/"]
+    },
+    "pages": ["Dashboard", "Analytics", "Users", "Settings", "Billing"],
+    "components": ["Sidebar", "Topbar", "StatsCard", "ChartPanel", "DataTable", "KpiGrid"],
+    "dependencies": {"frontend": ["vue", "vite", "typescript", "pinia", "axios", "tailwindcss"]}
+  },
+  "ui_vue_saas_landing": {
+    "name": "Vue SaaS Landing",
+    "description": "SaaS landing UI with Vue",
+    "stack": {"frontend": {"framework": "Vue", "language": "TypeScript"}},
+    "theme": "saas_landing",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/", "src/views/", "src/components/", "src/router/", "src/styles/"]
+    },
+    "pages": ["Home", "Features", "Pricing", "Testimonials", "FAQ", "Contact"],
+    "components": ["Hero", "FeatureGrid", "PricingCards", "LogoCloud", "CTASection", "Footer"],
+    "dependencies": {"frontend": ["vue", "vite", "typescript", "pinia", "axios", "tailwindcss"]}
+  },
+  "ui_vue_ecommerce_store": {
+    "name": "Vue E-commerce Store",
+    "description": "Storefront UI with catalog and checkout",
+    "stack": {"frontend": {"framework": "Vue", "language": "TypeScript"}},
+    "theme": "ecommerce_store",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/", "src/views/", "src/components/", "src/router/", "src/store/", "src/styles/"]
+    },
+    "pages": ["Home", "Catalog", "ProductDetail", "Cart", "Checkout", "Orders", "Account"],
+    "components": ["ProductCard", "ProductGallery", "Filters", "CartDrawer", "CheckoutForm", "ReviewList"],
+    "dependencies": {"frontend": ["vue", "vite", "typescript", "pinia", "axios", "tailwindcss"]}
+  },
+  "ui_vue_chat_app": {
+    "name": "Vue Chat App",
+    "description": "Chat UI with conversations and contacts",
+    "stack": {"frontend": {"framework": "Vue", "language": "TypeScript"}},
+    "theme": "chat_app",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/", "src/views/", "src/components/", "src/router/", "src/store/", "src/styles/"]
+    },
+    "pages": ["Inbox", "ChatRoom", "Contacts", "Settings"],
+    "components": ["ChatList", "MessageBubble", "Composer", "PresenceBadge", "FilePreview"],
+    "dependencies": {"frontend": ["vue", "vite", "typescript", "pinia", "axios", "tailwindcss"]}
+  },
+  "ui_vue_blog_cms": {
+    "name": "Vue Blog CMS",
+    "description": "Blog UI with editor and admin",
+    "stack": {"frontend": {"framework": "Vue", "language": "TypeScript"}},
+    "theme": "blog_cms",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/", "src/views/", "src/components/", "src/router/", "src/store/", "src/styles/"]
+    },
+    "pages": ["Home", "PostDetail", "Category", "Author", "Admin"],
+    "components": ["PostCard", "TagList", "Editor", "CommentThread", "Sidebar"],
+    "dependencies": {"frontend": ["vue", "vite", "typescript", "pinia", "axios", "tailwindcss"]}
+  },
+  "ui_vue_portfolio": {
+    "name": "Vue Portfolio",
+    "description": "Portfolio site with projects and resume",
+    "stack": {"frontend": {"framework": "Vue", "language": "TypeScript"}},
+    "theme": "portfolio",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/", "src/views/", "src/components/", "src/router/", "src/styles/"]
+    },
+    "pages": ["Home", "Projects", "ProjectDetail", "About", "Contact", "Resume"],
+    "components": ["Hero", "ProjectGrid", "CaseStudy", "Timeline", "ContactForm"],
+    "dependencies": {"frontend": ["vue", "vite", "typescript", "pinia", "axios", "tailwindcss"]}
+  },
+  "ui_svelte_admin_dashboard": {
+    "name": "SvelteKit Admin Dashboard",
+    "description": "Admin dashboard UI with SvelteKit",
+    "stack": {"frontend": {"framework": "SvelteKit", "language": "TypeScript"}},
+    "theme": "admin_dashboard",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/", "src/routes/", "src/lib/", "src/lib/components/", "src/lib/stores/", "src/styles/"]
+    },
+    "pages": ["Dashboard", "Analytics", "Users", "Settings", "Billing"],
+    "components": ["Sidebar", "Topbar", "StatsCard", "ChartPanel", "DataTable", "KpiGrid"],
+    "dependencies": {"frontend": ["svelte", "@sveltejs/kit", "typescript", "tailwindcss", "axios"]}
+  },
+  "ui_svelte_saas_landing": {
+    "name": "SvelteKit SaaS Landing",
+    "description": "SaaS landing page with SvelteKit",
+    "stack": {"frontend": {"framework": "SvelteKit", "language": "TypeScript"}},
+    "theme": "saas_landing",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/", "src/routes/", "src/lib/", "src/lib/components/", "src/styles/"]
+    },
+    "pages": ["Home", "Features", "Pricing", "Testimonials", "FAQ", "Contact"],
+    "components": ["Hero", "FeatureGrid", "PricingCards", "LogoCloud", "CTASection", "Footer"],
+    "dependencies": {"frontend": ["svelte", "@sveltejs/kit", "typescript", "tailwindcss", "axios"]}
+  },
+  "ui_svelte_ecommerce_store": {
+    "name": "SvelteKit E-commerce Store",
+    "description": "Storefront UI with SvelteKit",
+    "stack": {"frontend": {"framework": "SvelteKit", "language": "TypeScript"}},
+    "theme": "ecommerce_store",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/", "src/routes/", "src/lib/", "src/lib/components/", "src/styles/"]
+    },
+    "pages": ["Home", "Catalog", "ProductDetail", "Cart", "Checkout", "Orders", "Account"],
+    "components": ["ProductCard", "ProductGallery", "Filters", "CartDrawer", "CheckoutForm", "ReviewList"],
+    "dependencies": {"frontend": ["svelte", "@sveltejs/kit", "typescript", "tailwindcss", "axios"]}
+  },
+  "ui_svelte_chat_app": {
+    "name": "SvelteKit Chat App",
+    "description": "Chat UI with SvelteKit",
+    "stack": {"frontend": {"framework": "SvelteKit", "language": "TypeScript"}},
+    "theme": "chat_app",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/", "src/routes/", "src/lib/", "src/lib/components/", "src/lib/stores/", "src/styles/"]
+    },
+    "pages": ["Inbox", "ChatRoom", "Contacts", "Settings"],
+    "components": ["ChatList", "MessageBubble", "Composer", "PresenceBadge", "FilePreview"],
+    "dependencies": {"frontend": ["svelte", "@sveltejs/kit", "typescript", "tailwindcss", "axios"]}
+  },
+  "ui_svelte_blog_cms": {
+    "name": "SvelteKit Blog CMS",
+    "description": "Blog UI with editor and admin",
+    "stack": {"frontend": {"framework": "SvelteKit", "language": "TypeScript"}},
+    "theme": "blog_cms",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/", "src/routes/", "src/lib/", "src/lib/components/", "src/styles/"]
+    },
+    "pages": ["Home", "PostDetail", "Category", "Author", "Admin"],
+    "components": ["PostCard", "TagList", "Editor", "CommentThread", "Sidebar"],
+    "dependencies": {"frontend": ["svelte", "@sveltejs/kit", "typescript", "tailwindcss", "axios"]}
+  },
+  "ui_svelte_portfolio": {
+    "name": "SvelteKit Portfolio",
+    "description": "Portfolio site with SvelteKit",
+    "stack": {"frontend": {"framework": "SvelteKit", "language": "TypeScript"}},
+    "theme": "portfolio",
+    "ui_kits": ["Tailwind", "Material UI", "Ant Design", "Bootstrap"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["src/", "src/routes/", "src/lib/", "src/lib/components/", "src/styles/"]
+    },
+    "pages": ["Home", "Projects", "ProjectDetail", "About", "Contact", "Resume"],
+    "components": ["Hero", "ProjectGrid", "CaseStudy", "Timeline", "ContactForm"],
+    "dependencies": {"frontend": ["svelte", "@sveltejs/kit", "typescript", "tailwindcss", "axios"]}
+  },
+  "ui_flutter_admin_dashboard": {
+    "name": "Flutter Admin Dashboard",
+    "description": "Admin dashboard UI with Flutter",
+    "stack": {"frontend": {"framework": "Flutter", "language": "Dart"}},
+    "theme": "admin_dashboard",
+    "ui_kits": ["Material"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["lib/", "lib/screens/", "lib/widgets/", "lib/services/", "lib/theme/"]
+    },
+    "pages": ["Dashboard", "Analytics", "Users", "Settings", "Billing"],
+    "components": ["SideNav", "TopBar", "StatsCard", "ChartPanel", "DataTable", "KpiGrid"],
+    "dependencies": {"frontend": ["flutter", "dio", "provider"]}
+  },
+  "ui_flutter_saas_landing": {
+    "name": "Flutter SaaS Landing",
+    "description": "Marketing landing UI with Flutter",
+    "stack": {"frontend": {"framework": "Flutter", "language": "Dart"}},
+    "theme": "saas_landing",
+    "ui_kits": ["Material"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["lib/", "lib/screens/", "lib/widgets/", "lib/theme/"]
+    },
+    "pages": ["Home", "Features", "Pricing", "Testimonials", "FAQ", "Contact"],
+    "components": ["Hero", "FeatureGrid", "PricingCards", "LogoCloud", "CTASection", "Footer"],
+    "dependencies": {"frontend": ["flutter", "dio", "provider"]}
+  },
+  "ui_flutter_ecommerce_store": {
+    "name": "Flutter E-commerce Store",
+    "description": "Storefront UI with Flutter",
+    "stack": {"frontend": {"framework": "Flutter", "language": "Dart"}},
+    "theme": "ecommerce_store",
+    "ui_kits": ["Material"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["lib/", "lib/screens/", "lib/widgets/", "lib/services/", "lib/theme/"]
+    },
+    "pages": ["Home", "Catalog", "ProductDetail", "Cart", "Checkout", "Orders", "Account"],
+    "components": ["ProductCard", "ProductGallery", "Filters", "CartDrawer", "CheckoutForm", "ReviewList"],
+    "dependencies": {"frontend": ["flutter", "dio", "provider"]}
+  },
+  "ui_flutter_chat_app": {
+    "name": "Flutter Chat App",
+    "description": "Chat UI with Flutter",
+    "stack": {"frontend": {"framework": "Flutter", "language": "Dart"}},
+    "theme": "chat_app",
+    "ui_kits": ["Material"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["lib/", "lib/screens/", "lib/widgets/", "lib/services/", "lib/theme/"]
+    },
+    "pages": ["Inbox", "ChatRoom", "Contacts", "Settings"],
+    "components": ["ChatList", "MessageBubble", "Composer", "PresenceBadge", "FilePreview"],
+    "dependencies": {"frontend": ["flutter", "dio", "provider"]}
+  },
+  "ui_flutter_blog_cms": {
+    "name": "Flutter Blog CMS",
+    "description": "Blog UI with editor and admin",
+    "stack": {"frontend": {"framework": "Flutter", "language": "Dart"}},
+    "theme": "blog_cms",
+    "ui_kits": ["Material"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["lib/", "lib/screens/", "lib/widgets/", "lib/services/", "lib/theme/"]
+    },
+    "pages": ["Home", "PostDetail", "Category", "Author", "Admin"],
+    "components": ["PostCard", "TagList", "Editor", "CommentThread", "Sidebar"],
+    "dependencies": {"frontend": ["flutter", "dio", "provider"]}
+  },
+  "ui_flutter_portfolio": {
+    "name": "Flutter Portfolio",
+    "description": "Portfolio UI with projects and contact",
+    "stack": {"frontend": {"framework": "Flutter", "language": "Dart"}},
+    "theme": "portfolio",
+    "ui_kits": ["Material"],
+    "mode": ["light", "dark"],
+    "structure": {
+      "frontend/": ["lib/", "lib/screens/", "lib/widgets/", "lib/services/", "lib/theme/"]
+    },
+    "pages": ["Home", "Projects", "ProjectDetail", "About", "Contact", "Resume"],
+    "components": ["Hero", "ProjectGrid", "CaseStudy", "Timeline", "ContactForm"],
+    "dependencies": {"frontend": ["flutter", "dio", "provider"]}
+  }
+}

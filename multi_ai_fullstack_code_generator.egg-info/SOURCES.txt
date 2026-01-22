@@ -10,6 +10,8 @@ ai_providers/__init__.py
 ai_providers/anthropic_provider.py
 ai_providers/base_provider.py
 ai_providers/gemini_provider.py
+ai_providers/local_server_provider.py
+ai_providers/ollama_provider.py
 ai_providers/openai_provider.py
 core/__init__.py
 core/base_agent.py

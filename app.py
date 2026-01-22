@@ -32,7 +32,13 @@ from agents import (
     ExecutionAgent,
     LibraryManagerAgent
 )
-from ai_providers import OpenAIProvider, AnthropicProvider, GeminiProvider, OllamaProvider
+from ai_providers import (
+    OpenAIProvider,
+    AnthropicProvider,
+    GeminiProvider,
+    OllamaProvider,
+    LocalServerProvider,
+)
 from templates import TemplateManager
 from utils import format_code, parse_json_response, create_file_tree
 
@@ -62,6 +68,8 @@ def initialize_ai_provider(provider_type: str, api_key: str, model: str):
         return GeminiProvider(api_key=api_key, model=model)
     elif provider_type == "Local (Ollama)":
         return OllamaProvider(model=model)
+    elif provider_type == "Local Server":
+        return LocalServerProvider(model=model)
     return None
 
 
@@ -74,6 +82,19 @@ def get_ollama_models(base_url: str) -> list[str]:
     """Fetch installed Ollama models from local Ollama server."""
     try:
         response = httpx.get(f"{base_url}/api/tags", timeout=5.0)
+        response.raise_for_status()
+        data = response.json()
+        models = [item.get("name") for item in data.get("models", []) if item.get("name")]
+        return sorted(models)
+    except Exception:
+        return []
+
+
+@st.cache_data(ttl=30)
+def get_local_server_models(base_url: str) -> list[str]:
+    """Fetch installed models from local AI server."""
+    try:
+        response = httpx.get(f"{base_url}/models", timeout=5.0)
         response.raise_for_status()
         data = response.json()
         models = [item.get("name") for item in data.get("models", []) if item.get("name")]
@@ -167,7 +188,7 @@ with st.sidebar:
     st.subheader("AI Provider")
     provider_type = st.selectbox(
         "Select AI Provider",
-        ["OpenAI", "Anthropic", "Gemini", "Local (Ollama)"],
+        ["OpenAI", "Anthropic", "Gemini", "Local (Ollama)", "Local Server"],
         help="Choose your AI model provider"
     )
     
@@ -181,7 +202,7 @@ with st.sidebar:
     elif provider_type == "Gemini":
         model = st.selectbox("Model", ["gemini-pro", "gemini-1.5-pro", "gemini-1.5-flash"])
         api_key_placeholder = "AIza..."
-    else:  # Local (Ollama)
+    elif provider_type == "Local (Ollama)":
         ollama_base_url = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
         installed_models = get_ollama_models(ollama_base_url)
         default_models = [
@@ -198,6 +219,14 @@ with st.sidebar:
         model_options = installed_models or default_models
         model = st.selectbox("Model", model_options)
         api_key_placeholder = "Not required"
+    else:  # Local Server
+        server_url = os.getenv("LOCAL_AI_SERVER_URL", "http://localhost:8000")
+        installed_models = get_local_server_models(server_url)
+        if installed_models:
+            model = st.selectbox("Model", installed_models)
+        else:
+            model = st.text_input("Model", value="llama3.1:8b-instruct-q4_0")
+        api_key_placeholder = "Not required"
     
     requires_key = provider_requires_key(provider_type)
     api_key_input = st.text_input(
@@ -210,7 +239,10 @@ with st.sidebar:
 
     resolved_api_key = resolve_api_key(provider_type, api_key_input)
     if not requires_key:
-        st.caption("🧠 Local Ollama: no API key required.")
+        if provider_type == "Local (Ollama)":
+            st.caption("🧠 Local Ollama: no API key required.")
+        elif provider_type == "Local Server":
+            st.caption("🖥️ Local AI Server: no API key required.")
     elif not api_key_input and resolved_api_key:
         st.caption("🔐 Using API key from environment or Streamlit secrets.")
 

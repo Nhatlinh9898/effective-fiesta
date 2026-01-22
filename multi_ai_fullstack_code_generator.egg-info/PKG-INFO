@@ -7,11 +7,26 @@ Description-Content-Type: text/markdown
 Requires-Dist: anthropic>=0.76.0
 Requires-Dist: google-generativeai>=0.8.6
 Requires-Dist: httpx>=0.27.0
+Requires-Dist: fastapi>=0.111.0
 Requires-Dist: matplotlib>=3.10.8
 Requires-Dist: numpy>=2.3.5
 Requires-Dist: openai>=2.15.0
 Requires-Dist: pandas>=2.3.3
 Requires-Dist: plotly>=6.5.0
 Requires-Dist: streamlit>=1.52.1
+Requires-Dist: uvicorn>=0.30.0
 
-# Data App
+# Multi-AI Fullstack Code Generator
+
+## Local AI Server (no external API)
+
+1. Start Ollama and pull a model:
+   - `ollama serve`
+   - `ollama pull llama3.1:8b-instruct-q4_0`
+2. Run local server:
+   - `py -m uvicorn local_ai_server:app --host 0.0.0.0 --port 8000`
+3. Run app:
+   - `py -m streamlit run app.py`
+4. In sidebar, choose **Local Server** and select model.
+
+You can change Ollama URL via `OLLAMA_BASE_URL`, and server URL via `LOCAL_AI_SERVER_URL`.
