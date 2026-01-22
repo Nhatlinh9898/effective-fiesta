@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "content": "Cập nhật project metadata (pyproject.toml, app.py)",
+    "status": "completed"
+  },
+  {
+    "id": "2",
+    "content": "Tạo core system: Agent base classes và orchestrator",
+    "status": "completed"
+  },
+  {
+    "id": "3",
+    "content": "Tạo các specialized agents (Architecture, CodeGen, Analyzer, Executor, Library)",
+    "status": "completed"
+  },
+  {
+    "id": "4",
+    "content": "Tạo AI provider connectors (OpenAI, Anthropic, Gemini)",
+    "status": "completed"
+  },
+  {
+    "id": "5",
+    "content": "Tạo template system và library manager",
+    "status": "completed"
+  },
+  {
+    "id": "6",
+    "content": "Xây dựng Streamlit UI với multi-agent workflow",
+    "status": "completed"
+  }
+]

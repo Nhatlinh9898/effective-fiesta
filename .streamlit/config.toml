@@ -1,0 +1,96 @@
+# Memex Streamlit Theme
+
+[server]
+enableStaticServing = true
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "viewer"
+
+# Users can toggle between themes via:
+# - Settings menu (⚙️ → Theme)
+# - System theme preference (OS light/dark mode)
+# ============================================================================
+
+[theme]
+# Global theme settings (apply to both light and dark)
+base = "light"
+baseRadius = "0.6rem"
+font = "Styrene B"
+codeFont = "Fira Code:https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap"
+showSidebarBorder = true
+showWidgetBorder = true
+headingFontSizes = ["40px", "32px", "24px"]
+headingFontWeights = 500
+
+# ============================================================================
+# MEMEX LIGHT THEME
+# ============================================================================
+
+[theme.light]
+primaryColor = "#4BA9FE"
+backgroundColor = "#fafafa"
+secondaryBackgroundColor = "#f5f5f5"
+textColor = "#171717"
+# Using a distinct link color for better visibility in light mode
+linkColor = "#2563eb"
+borderColor = "#d4d4d4"
+codeBackgroundColor = "#f5f5f5"
+
+[theme.light.sidebar]
+backgroundColor = "#e5e5e5"
+secondaryBackgroundColor = "#fafafa"
+
+# ============================================================================
+# MEMEX DARK THEME
+# ============================================================================
+
+[theme.dark]
+primaryColor = "#4BA9FE"
+backgroundColor = "#171717"
+secondaryBackgroundColor = "#262626"
+textColor = "#fafafa"
+# Brighter link color for dark mode accessibility
+linkColor = "#60a5fa"
+borderColor = "#404040"
+codeBackgroundColor = "#262626"
+
+[theme.dark.sidebar]
+backgroundColor = "#0a0a0a"
+secondaryBackgroundColor = "#171717"
+
+# ============================================================================
+# CUSTOM FONTS (STYRENE B FONT FAMILY)
+# ============================================================================
+
+[[theme.fontFaces]]
+url = "app/static/Styrene_B_Family/StyreneB-Thin-Trial.otf"
+family = "Styrene B"
+weight = 100
+
+[[theme.fontFaces]]
+url = "app/static/Styrene_B_Family/StyreneB-Light-Trial.otf"
+family = "Styrene B"
+weight = 300
+
+[[theme.fontFaces]]
+url = "app/static/Styrene_B_Family/StyreneB-Regular-Trial.otf"
+family = "Styrene B"
+weight = 400
+
+[[theme.fontFaces]]
+url = "app/static/Styrene_B_Family/StyreneB-Medium-Trial.otf"
+family = "Styrene B"
+weight = 500
+
+[[theme.fontFaces]]
+url = "app/static/Styrene_B_Family/StyreneB-Bold-Trial.otf"
+family = "Styrene B"
+weight = 700
+
+[[theme.fontFaces]]
+url = "app/static/Styrene_B_Family/StyreneB-Black-Trial.otf"
+family = "Styrene B"
+weight = 900
