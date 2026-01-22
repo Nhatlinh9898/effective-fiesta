@@ -19,3 +19,16 @@ Custom templates live in `project_templates/custom_templates.json` and are expos
 - `GET /templates`
 - `GET /templates/{template_id}`
 - `POST /templates/{template_id}/generate`
+
+## Lightweight CPU AI Server (GGUF)
+
+If you want a lightweight GGUF server for weak machines:
+
+1. Start GGUF server:
+   - `py -m pip install -r ai_server/requirements.txt`
+   - `set MODEL_DIR=ai_server/models`
+   - `set DEFAULT_MODEL=llama3.1-8b-instruct-q4_k_m.gguf`
+   - `py -m uvicorn ai_server.app.main:app --host 0.0.0.0 --port 8001`
+2. Point the app to it:
+   - `set LOCAL_AI_SERVER_URL=http://localhost:8001`
+3. Run app and choose **Local Server**.
