@@ -1,0 +1,11 @@
+{
+  "context_window": 2048,
+  "temperature": 0.2,
+  "top_k": 40,
+  "top_p": 0.9,
+  "max_tokens": 512,
+  "batch_size": 128,
+  "enable_gpu": false,
+  "rate_limit_per_minute": 30,
+  "cache_max_items": 128
+}

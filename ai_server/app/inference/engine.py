@@ -75,6 +75,7 @@ class LlamaEngine:
                 prompt,
                 max_tokens=settings.max_tokens,
                 temperature=settings.temperature,
+                top_k=settings.top_k,
                 top_p=settings.top_p,
                 stream=True,
             ):
@@ -85,6 +86,7 @@ class LlamaEngine:
             prompt,
             max_tokens=settings.max_tokens,
             temperature=settings.temperature,
+            top_k=settings.top_k,
             top_p=settings.top_p,
         )["choices"][0]["text"]
         self._cache.set(cache_key, result)

@@ -1,0 +1,16 @@
+[Unit]
+Description=Lightweight Local AI Server
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/ai_server
+Environment=MODEL_DIR=/opt/ai_server/models
+Environment=DEFAULT_MODEL=llama3.1-8b-instruct-q4_k_m.gguf
+Environment=CONFIG_PATH=/opt/ai_server/config.json
+ExecStart=/usr/bin/python3 -m uvicorn ai_server.app.main:app --host 0.0.0.0 --port 8001
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
